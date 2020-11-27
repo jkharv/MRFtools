@@ -13,7 +13,6 @@ Imports:
     mgcv,
     ggplot2,
     ggraph,
-    gratia,
     sp,
     sf,
     dplyr,
