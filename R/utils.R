@@ -44,21 +44,6 @@
   get_mrf(object, ...)
 }
 
-##' @param term character; the MRF term to extract. Can be a partial match to a
-##'   term, which is matched against the smooth label.
-##'
-##' @export
-##' @rdname get_mrf
-##'
-##' @importFrom gratia which_smooth get_smooths_by_id is_mrf_smooth
-`get_mrf.gam` <- function(object, term, ...) {
-  ids <- which_smooth(object, term)
-  smooths <- get_smooths_by_id(object, ids)
-  mrfs <- vapply(smooths, FUN = is_mrf_smooth, FUN.VALUE = logical(1))
-  smooths <- smooths[[mrfs]]
-  smooths
-}
-
 ##' @export
 `print.mrf_penalty` <- function(x, ...) {
     ## grab the configuration of the MRF
